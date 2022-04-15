@@ -17,11 +17,7 @@ const App = () => {
     search: "",
   });
 
-  const [list, setList] = useState({
-    dataTodo: [],
-    loadingTodo: true,
-    errorTodo: undefined,
-  });
+  const [list, setList] = useState({});
 
   const [getTodos, { data, loading, error, refetch }] = useLazyQuery(GET_TODOS);
 
