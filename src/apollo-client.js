@@ -1,12 +1,10 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-console.log(process.env.REACT_APP_SERVER_GRAPHQL)
-
 const client = new ApolloClient({
-    uri: process.env.REACT_APP_SERVER_GRAPHQL,
+    uri: "https://task-graphql-query.hasura.app/v1/graphql",
     cache: new InMemoryCache(),
     headers: {
-        'x-hasura-admin-secret': process.env.REACT_APP_SECRET_KEY
+        "x-hasura-admin-secret": "IM3I7M9ForWfVT0LLK7VNtIkwDIh47BoFrzH8LEIVF17xAERJWyh8W544ekfWJn6",
     }
 })
 
