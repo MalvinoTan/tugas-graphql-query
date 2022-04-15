@@ -36,7 +36,7 @@ const App = () => {
       dataTodo: dataId,
       loadingTodo: loadingId,
       errorTodo: errorId,
-    })
+    });
   }, [dataId]);
 
   useEffect(() => {
@@ -44,12 +44,14 @@ const App = () => {
       dataTodo: data,
       loadingTodo: loading,
       errorTodo: error,
-    })
-  }, [data])
+    });
+  }, [data]);
 
   const onSubmitList = (e) => {
     e.preventDefault();
     alert("Pada Task ini belum bisa insert todo");
+
+    setInputs({ ...inputs, submit: "" });
   };
 
   const onSearchList = (e) => {
@@ -60,15 +62,17 @@ const App = () => {
         dataTodo: data,
         loadingTodo: loading,
         errorTodo: error,
-      })
+      });
     }
     else {
       getTodoById({
         variables: {
           id: inputs.search,
         }
-      })
+      });
     }
+
+    setInputs({ ...inputs, search: "" });
   };
 
   const onClickItem = (idx) => {
