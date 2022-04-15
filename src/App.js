@@ -84,27 +84,24 @@ const App = () => {
       <div className="container">
         <h1 className="app-title">todos</h1>
         {
-          list.loadingTodo ?
-            (<h1>Getting Data...</h1>)
-            :
-            !list.loadingTodo && list.dataTodo ?
-              (<ul className="todo-list js-todo-list">
-                {
+          !list.loadingTodo && list.dataTodo ?
+            (<ul className="todo-list js-todo-list">
+              {
 
-                  list.dataTodo.todos.map((v) => (
-                    <Todo
-                      key={v.id}
-                      id={v.id}
-                      onClickItem={() => onClickItem(v.id)}
-                      onDeleteItem={() => onDeleteItem(v.id)}
-                      title={v.title}
-                      checked={v.isDone}
-                    />
-                  ))
-                }
-              </ul>)
-              :
-              <></>
+                list.dataTodo.todos.map((v) => (
+                  <Todo
+                    key={v.id}
+                    id={v.id}
+                    onClickItem={() => onClickItem(v.id)}
+                    onDeleteItem={() => onDeleteItem(v.id)}
+                    title={v.title}
+                    checked={v.isDone}
+                  />
+                ))
+              }
+            </ul>)
+            :
+            (<h1>Getting Data...</h1>)
         }
         <div className="empty-state">
           <svg className="checklist-icon">
