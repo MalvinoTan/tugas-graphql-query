@@ -71,11 +71,11 @@ const App = () => {
     setInputs({ ...inputs, search: "" });
   };
 
-  const onClickItem = (idx) => {
+  const onClickItem = (id) => {
     alert("Pada Task ini belum bisa update todo");
   };
 
-  const onDeleteItem = (idx) => {
+  const onDeleteItem = (id) => {
     alert("Pada Task ini belum bisa delete todo");
   };
 
