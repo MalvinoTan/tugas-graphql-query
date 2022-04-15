@@ -1,4 +1,4 @@
-import { useState, useEffect, useDebugValue } from "react";
+import { useState, useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 
 /** Styles */
